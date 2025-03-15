@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json.schemastore.org/jsconfig",
+  "extends": "longmo-jsconfig/node.json",
+  "include": [
+    "src"
+  ],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json.schemastore.org/jsconfig",
+  "display": "Web Application",
+  "extends": "./web.json"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "longmo-lint-configs",
+  "version": "1.0.0",
+  "description": "lint configs for vue2 & vue3",
+  "author": {
+    "name": "longmo"
+  },
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "sort": "npx sort-package-json",
+    "update:deps": "npx taze -r -w",
+    "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile"
+  },
+  "devDependencies": {
+    "vite": "catalog:",
+    "cross-env": "catalog:",
+    "husky": "catalog:",
+    "is-ci": "catalog:",
+    "lint-staged": "catalog:",
+    "rimraf": "catalog:"
+  },
+  "files": [
+    "dist",
+    ".gitignore",
+    ".lintstagedrc.mjs",
+    ".prettierrc.mjs",
+    ".stylelintignore",
+    "eslint.config.mjs",
+    "stylelint.config.mjs",
+    "README.md",
+    "internal/eslint-config",
+    "internal/prettier-config",
+    "internal/stylelint-config"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "packageManager": "pnpm@9.15.3",
+  "engines": {
+    "node": ">=18.20.4",
+    "pnpm": ">=9.12.0"
+  },
+  "volta": {
+    "node": "18.20.6"
+  }
+}
