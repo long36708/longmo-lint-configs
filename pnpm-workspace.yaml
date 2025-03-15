@@ -60,3 +60,5 @@ catalog:
   is-ci: ^4.1.0
   jsonc-eslint-parser: ^2.4.0
   rimraf: ^6.0.1
+  typescript: ^5.7.3
+  unbuild: ^3.2.0

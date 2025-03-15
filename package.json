@@ -7,20 +7,6 @@
   },
   "type": "module",
   "main": "index.js",
-  "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "sort": "npx sort-package-json",
-    "update:deps": "npx taze -r -w",
-    "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile"
-  },
-  "devDependencies": {
-    "vite": "catalog:",
-    "cross-env": "catalog:",
-    "husky": "catalog:",
-    "is-ci": "catalog:",
-    "lint-staged": "catalog:",
-    "rimraf": "catalog:"
-  },
   "files": [
     "dist",
     ".gitignore",
@@ -34,8 +20,30 @@
     "internal/prettier-config",
     "internal/stylelint-config"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+  "scripts": {
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 turbo build",
+    "build:eslint-config": "pnpm run build --filter=longmo-eslint-config",
+    "build:prettier-config": "pnpm run build --filter=longmo-prettier-config",
+    "build:stylelint-config": "pnpm run build --filter=longmo-stylelint-config",
+    "clean": "node ./scripts/clean.mjs",
+    "changeset": "pnpm exec changeset",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm -r run stub --if-present",
+    "prepare": "is-ci || husky",
+    "reinstall": "pnpm clean --del-lock && pnpm install",
+    "sort": "npx sort-package-json",
+    "update:deps": "npx taze -r -w",
+    "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile"
+  },
+  "devDependencies": {
+    "cross-env": "catalog:",
+    "husky": "catalog:",
+    "is-ci": "catalog:",
+    "lint-staged": "catalog:",
+    "rimraf": "catalog:",
+    "typescript": "catalog:",
+    "unbuild": "catalog:",
+    "vite": "catalog:"
   },
   "packageManager": "pnpm@9.15.3",
   "engines": {
@@ -44,5 +52,8 @@
   },
   "volta": {
     "node": "18.20.6"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }

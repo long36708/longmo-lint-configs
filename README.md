@@ -1,6 +1,15 @@
 # longmo-lint-configs
 
 
+```text
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/long36708/longmo-lint-configs.git
+git push -u origin main
+```
+
 ```ts
  // 中英文对照版
     // messages: {
