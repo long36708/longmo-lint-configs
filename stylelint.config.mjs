@@ -1,4 +1,4 @@
 export default {
-  extends: ['longmo-stylelint-config'],
+  extends: ['longmo-lint-configs/stylelint-config'],
   root: true,
 };

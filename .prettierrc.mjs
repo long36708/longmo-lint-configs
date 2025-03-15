@@ -1,1 +1,1 @@
-export { default } from 'longmo-prettier-config';
+export { default } from 'longmo-lint-configs/prettier-config';

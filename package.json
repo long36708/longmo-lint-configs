@@ -1,11 +1,26 @@
 {
   "name": "longmo-lint-configs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "lint configs for vue2 & vue3",
   "author": {
     "name": "longmo"
   },
   "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./eslint-config": {
+      "import": "./internal/eslint-config/dist/index.mjs",
+      "default": "./internal/eslint-config/dist/index.mjs"
+    },
+    "./prettier-config": {
+      "import": "./internal/prettier-config/index.mjs",
+      "default": "./internal/prettier-config/index.mjs"
+    },
+    "./stylelint-config": {
+      "import": "./internal/stylelint-config/index.mjs",
+      "default": "./internal/stylelint-config/index.mjs"
+    }
+  },
   "main": "index.js",
   "files": [
     "dist",
@@ -25,11 +40,13 @@
     "build:eslint-config": "pnpm run build --filter=longmo-eslint-config",
     "build:prettier-config": "pnpm run build --filter=longmo-prettier-config",
     "build:stylelint-config": "pnpm run build --filter=longmo-stylelint-config",
-    "clean": "node ./scripts/clean.mjs",
     "changeset": "pnpm exec changeset",
+    "clean": "node ./scripts/clean.mjs",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "pnpm -r run stub --if-present",
+    "pb": "pnpm publish --no-git-checks",
     "prepare": "is-ci || husky",
+    "upb": "pnpm unpublish longmo-lint-configs@1.0.0",
     "reinstall": "pnpm clean --del-lock && pnpm install",
     "sort": "npx sort-package-json",
     "update:deps": "npx taze -r -w",
@@ -40,7 +57,9 @@
     "husky": "catalog:",
     "is-ci": "catalog:",
     "lint-staged": "catalog:",
+    "longmo-lint-configs": "1.0.0",
     "rimraf": "catalog:",
+    "turbo": "catalog:",
     "typescript": "catalog:",
     "unbuild": "catalog:",
     "vite": "catalog:"
