@@ -1,6 +1,6 @@
 {
   "name": "longmo-eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "type": "module",
   "scripts": {
     "stub": "pnpm unbuild --stub",
@@ -13,15 +13,14 @@
   "module": "./dist/index.mjs",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.mjs"
     }
   },
   "dependencies": {
     "eslint-config-turbo": "catalog:",
     "eslint-plugin-command": "catalog:",
-    "eslint-plugin-import-x": "catalog:"
-  },
-  "devDependencies": {
+    "eslint-plugin-import-x": "catalog:",
     "@eslint/js": "catalog:",
     "@types/eslint": "catalog:",
     "@typescript-eslint/eslint-plugin": "catalog:",
