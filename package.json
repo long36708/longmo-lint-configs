@@ -1,6 +1,6 @@
 {
   "name": "longmo-lint-configs",
-  "version": "1.0.2",
+  "version": "1.0.7-beta.1",
   "description": "lint configs for vue2 & vue3",
   "author": {
     "name": "longmo"
@@ -22,14 +22,13 @@
     }
   },
   "files": [
-    "dist",
     ".gitignore",
     ".lintstagedrc.mjs",
     ".stylelintignore",
     "prettier.config.mjs",
     "eslint.config.mjs",
     "stylelint.config.mjs",
-    "internal/eslint-config/dist",
+    "internal/eslint-config",
     "internal/prettier-config",
     "internal/stylelint-config",
     "README.md"
@@ -42,7 +41,7 @@
     "changeset": "pnpm exec changeset",
     "clean": "node ./scripts/clean.mjs",
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "pnpm -r run stub --if-present",
+    "//postinstall": "pnpm -r run stub --if-present",
     "npm:unpublish": "npm unpublish @ai-hpc/lint-configs@0.0.2 --force",
     "npm:view": "npm view @ai-hpc/lint-configs versions",
     "pb": "pnpm run build:eslint-config && pnpm publish --no-git-checks",

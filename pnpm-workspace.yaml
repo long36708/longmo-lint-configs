@@ -1,10 +1,8 @@
 packages:
-  - eslint-config/*
-  - prettier-config/*
-  - commitlint-config/*
-  - stylelint-config/*
   - internal/*
   - internal/lint-configs/*
+  - internal/prettier-config/*
+  - internal/stylelint-config/*
 catalog:
   '@commitlint/cli': ^19.6.1
   '@commitlint/config-conventional': ^19.6.0

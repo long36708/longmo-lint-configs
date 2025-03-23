@@ -1,6 +1,6 @@
 {
   "name": "longmo-prettier-config",
-  "version": "1.0.2",
+  "version": "1.0.7-beta.1",
   "type": "module",
   "files": [
     "dist"
