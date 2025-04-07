@@ -7,6 +7,9 @@
     "**/jsconfig*.json",
     "internal/tailwind-config/src/**/*.ts",
     "internal/tailwind-config/src/**/*.js",
+    "internal/eslint-config/src/**/*.js",
+    "internal/prettier-config/src/**/*.js",
+    "internal/stylelint-config/src/**/*.js",
     "internal/vite-config/*.json",
     "internal/vite-config/src/**/*.ts",
     "internal/vite-config/src/**/*.js",
@@ -32,10 +35,6 @@
     "build:analyze": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
-    },
-    "@longmo/backend-mock#build": {
-      "dependsOn": ["^build"],
-      "outputs": [ ".output/**"]
     },
     "test:e2e": {},
     "dev": {

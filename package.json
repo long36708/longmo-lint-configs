@@ -1,6 +1,6 @@
 {
   "name": "longmo-lint-configs",
-  "version": "1.0.7-beta.4",
+  "version": "1.0.7-beta.6",
   "description": "lint configs for vue2 & vue3",
   "author": {
     "name": "longmo"
@@ -23,15 +23,14 @@
   },
   "files": [
     "internal/eslint-config/dist",
-    "internal/eslint-config",
-    "internal/prettier-config",
-    "internal/stylelint-config",
+    "internal/prettier-config/index.mjs",
+    "internal/stylelint-config/index.mjs",
     "prettier.config.mjs",
     "eslint.config.mjs",
     "stylelint.config.mjs"
   ],
   "scripts": {
-    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 turbo build",
+    "//build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 turbo build",
     "build:eslint-config": "pnpm run build --filter=longmo-eslint-config",
     "build:prettier-config": "pnpm run build --filter=longmo-prettier-config",
     "build:stylelint-config": "pnpm run build --filter=longmo-stylelint-config",
@@ -46,6 +45,7 @@
     "pb:prettier-config": "cd internal/prettier-config && pnpm publish --no-git-checks",
     "pb:stylelint-config": "cd internal/stylelint-config && pnpm publish --no-git-checks",
     "prepare": "is-ci || husky",
+    "prepublishOnly": "npm run build",
     "reinstall": "pnpm clean --del-lock && pnpm install",
     "release": "pnpx bumpp --no-tag --no-commit --no-push -r && pnpm pb",
     "sort": "pnpx sort-package-json",
