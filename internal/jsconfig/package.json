@@ -12,5 +12,8 @@
   ],
   "dependencies": {
     "vite": "catalog:"
+  },
+  "peerDependencies": {
+    "vite": "^6.0.11"
   }
 }

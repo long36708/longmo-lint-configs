@@ -236,9 +236,6 @@ importers:
       lint-staged:
         specifier: 'catalog:'
         version: 15.5.0
-      longmo-lint-configs:
-        specifier: 1.0.0
-        version: 1.0.0
       postcss:
         specifier: 'catalog:'
         version: 8.5.3
@@ -2129,10 +2126,6 @@ packages:
   log-update@6.1.0:
     resolution: {integrity: sha512-9ie8ItPR6tjY5uYJh8K/Zrv/RMZ5VOlOWvtZdEHYSTFKZfIBPQa9tOAEeAWhd+AnIneLJ22w5fjOYtoutpWq5w==}
     engines: {node: '>=18'}
-
-  longmo-lint-configs@1.0.0:
-    resolution: {integrity: sha512-wMPBVKvCI5/mMAgsWtbr1xIO57VbKJHvhaJ8OAlZwpaST29YutIeelBRcwFLpf0u312aQrCzDHj6V6ogj+QSDA==}
-    engines: {node: '>=18.20.4', pnpm: '>=9.12.0'}
 
   lru-cache@11.1.0:
     resolution: {integrity: sha512-QIXZUBJUx+2zHUdQujWejBkcD9+cs94tLn0+YL8UrCh+D5sCXZ4c7LaEH48pNwRY3MLDgqUFyhlCyjJPf1WP0A==}
@@ -4917,8 +4910,6 @@ snapshots:
       slice-ansi: 7.1.0
       strip-ansi: 7.1.0
       wrap-ansi: 9.0.0
-
-  longmo-lint-configs@1.0.0: {}
 
   lru-cache@11.1.0: {}
 

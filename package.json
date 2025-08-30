@@ -1,6 +1,6 @@
 {
   "name": "longmo-lint-configs",
-  "version": "1.0.7-beta.6",
+  "version": "1.0.7-beta.7",
   "description": "lint configs for vue2 & vue3",
   "author": {
     "name": "longmo"
@@ -30,7 +30,7 @@
     "stylelint.config.mjs"
   ],
   "scripts": {
-    "//build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 turbo build",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 turbo build",
     "build:eslint-config": "pnpm run build --filter=longmo-eslint-config",
     "build:prettier-config": "pnpm run build --filter=longmo-prettier-config",
     "build:stylelint-config": "pnpm run build --filter=longmo-stylelint-config",
@@ -83,7 +83,6 @@
     "is-ci": "catalog:",
     "jsonc-eslint-parser": "catalog:",
     "lint-staged": "catalog:",
-    "longmo-lint-configs": "1.0.0",
     "postcss": "catalog:",
     "postcss-html": "catalog:",
     "postcss-scss": "catalog:",

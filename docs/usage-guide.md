@@ -23,9 +23,26 @@ yarn add longmo-lint-configs --dev
 
 #### 2. 安装 Peer Dependencies
 
-项目使用 `catalog:` 统一管理版本，在发布时会自动同步 `peerDependencies` 版本号。
+⚠️ **重要：用户必须单独安装相关依赖！**
+
+**为什么需要安装额外依赖？**
+
+- 构建使用 `externals` 配置，依赖不会被打包
+- 构建后文件仍包含 `import` 语句引用外部包
+- ESLint 插件需要在运行时从 node_modules 动态加载
+- 包大小优化：当前仅 36.9 kB（如打包所有依赖会很大）
+
+**构建后的代码示例：**
+
+```javascript
+// 实际发布的文件仍然包含这些 import
+import createCommand from 'eslint-plugin-command/config';
+import * as pluginImport from 'eslint-plugin-import-x';
+import js from '@eslint/js';
+```
 
 **自动安装（推荐）：**
+
 ```bash
 # pnpm 会自动检测并提示安装 peer dependencies
 pnpm install
@@ -35,6 +52,7 @@ pnpm why --peer
 ```
 
 **手动安装核心依赖：**
+
 ```bash
 # 基础依赖（必需）
 pnpm add -D eslint @eslint/js eslint-plugin-import-x eslint-plugin-prettier
@@ -52,16 +70,19 @@ pnpm add -D prettier stylelint
 **一键安装不同项目类型：**
 
 Vue3 + TypeScript 项目：
+
 ```bash
 pnpm add -D longmo-lint-configs eslint @eslint/js @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-vue vue-eslint-parser eslint-plugin-import-x eslint-plugin-prettier prettier stylelint
 ```
 
 Vue2 项目：
+
 ```bash
 pnpm add -D longmo-lint-configs eslint @eslint/js eslint-plugin-vue vue-eslint-parser eslint-plugin-import-x eslint-plugin-prettier prettier stylelint
 ```
 
 Node.js 项目：
+
 ```bash
 pnpm add -D longmo-lint-configs eslint @eslint/js eslint-plugin-n eslint-plugin-import-x eslint-plugin-prettier prettier
 ```
@@ -69,6 +90,7 @@ pnpm add -D longmo-lint-configs eslint @eslint/js eslint-plugin-n eslint-plugin-
 #### 3. 可选插件
 
 以下插件被标记为可选，根据需要安装：
+
 - `eslint-plugin-perfectionist` - 代码排序
 - `eslint-plugin-unicorn` - 代码质量提升
 - `eslint-plugin-regexp` - 正则表达式优化
@@ -510,10 +532,10 @@ export default defineConfig([
       // 完全禁用规则
       'no-console': 'off',
       'vue/require-default-prop': 'off',
-      
+
       // 降级为警告
       '@typescript-eslint/no-unused-vars': 'warn',
-      
+
       // 自定义规则选项
       'max-len': ['error', { code: 120 }],
     },
@@ -554,6 +576,7 @@ A: `longmo-lint-configs` 没有将 ESLint 插件打包在内，您需要根据�
 ### Q: 我只想使用部分功能，需要安装所有依赖吗？
 
 A: 不需要。您可以按需安装：
+
 - 只使用 Prettier：只需安装 `prettier`
 - 只使用 Stylelint：只需安装 `stylelint` 相关依赖
 - 基础 ESLint：安装 `eslint` + `@eslint/js` + 项目相关插件
@@ -561,6 +584,7 @@ A: 不需要。您可以按需安装：
 ### Q: 如何检查缺少哪些依赖？
 
 A: 运行 ESLint 时，如果缺少依赖会有明确的错误提示：
+
 ```bash
 npm run lint
 # 或
@@ -632,4 +656,4 @@ export default defineConfig([
 
 ---
 
-*最后更新时间: 2025年8月30日*
+_最后更新时间: 2025年8月30日_
