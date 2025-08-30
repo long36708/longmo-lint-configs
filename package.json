@@ -1,6 +1,6 @@
 {
   "name": "longmo-lint-configs",
-  "version": "1.0.7-beta.7",
+  "version": "1.0.9",
   "description": "lint configs for vue2 & vue3",
   "author": {
     "name": "longmo"
