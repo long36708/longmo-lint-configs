@@ -17,6 +17,56 @@
       "default": "./dist/index.mjs"
     }
   },
+  "peerDependenciesMeta": {
+    "@typescript-eslint/eslint-plugin": {
+      "optional": true
+    },
+    "@typescript-eslint/parser": {
+      "optional": true
+    },
+    "eslint-plugin-vue": {
+      "optional": true
+    },
+    "vue-eslint-parser": {
+      "optional": true
+    },
+    "eslint-plugin-perfectionist": {
+      "optional": true
+    },
+    "eslint-plugin-unicorn": {
+      "optional": true
+    },
+    "eslint-plugin-regexp": {
+      "optional": true
+    },
+    "eslint-plugin-jsdoc": {
+      "optional": true
+    },
+    "eslint-plugin-jsonc": {
+      "optional": true
+    },
+    "eslint-plugin-n": {
+      "optional": true
+    },
+    "eslint-plugin-no-only-tests": {
+      "optional": true
+    },
+    "eslint-plugin-eslint-comments": {
+      "optional": true
+    },
+    "eslint-plugin-unused-imports": {
+      "optional": true
+    },
+    "eslint-plugin-command": {
+      "optional": true
+    },
+    "eslint-config-turbo": {
+      "optional": true
+    },
+    "@vitest/eslint-plugin": {
+      "optional": true
+    }
+  },
   "dependencies": {
     "eslint-config-turbo": "catalog:",
     "eslint-plugin-command": "catalog:",

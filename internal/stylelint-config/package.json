@@ -3,7 +3,7 @@
   "version": "1.0.7-beta.4",
   "type": "module",
   "files": [
-    "dist"
+    "index.mjs"
   ],
   "main": "index.mjs",
   "module": "index.mjs",
@@ -11,6 +11,23 @@
     ".": {
       "import": "./index.mjs",
       "default": "./index.mjs"
+    }
+  },
+  "peerDependenciesMeta": {
+    "stylelint-scss": {
+      "optional": true
+    },
+    "postcss-scss": {
+      "optional": true
+    },
+    "stylelint-config-recommended-scss": {
+      "optional": true
+    },
+    "stylelint-config-recommended-vue": {
+      "optional": true
+    },
+    "stylelint-prettier": {
+      "optional": true
     }
   },
   "dependencies": {

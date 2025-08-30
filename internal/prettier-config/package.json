@@ -3,13 +3,18 @@
   "version": "1.0.7-beta.4",
   "type": "module",
   "files": [
-    "dist"
+    "index.mjs"
   ],
   "main": "index.mjs",
   "module": "index.mjs",
   "exports": {
     ".": {
       "default": "./index.mjs"
+    }
+  },
+  "peerDependenciesMeta": {
+    "prettier-plugin-tailwindcss": {
+      "optional": true
     }
   },
   "dependencies": {
