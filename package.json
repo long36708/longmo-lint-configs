@@ -1,6 +1,6 @@
 {
   "name": "longmo-lint-configs",
-  "version": "1.0.15",
+  "version": "1.0.17",
   "description": "lint configs for vue2 & vue3",
   "author": {
     "name": "longmo"
@@ -55,16 +55,10 @@
     "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile"
   },
   "dependencies": {
-    "prettier-plugin-tailwindcss": "^0.6.9"
+    "prettier-plugin-tailwindcss": "catalog:"
   },
   "devDependencies": {
     "@changesets/cli": "^2.28.1",
-    "@eslint/js": "catalog:",
-    "@stylistic/stylelint-plugin": "catalog:",
-    "@types/eslint": "catalog:",
-    "@typescript-eslint/eslint-plugin": "catalog:",
-    "@typescript-eslint/parser": "catalog:",
-    "@vitest/eslint-plugin": "catalog:",
     "cross-env": "catalog:",
     "globals": "catalog:",
     "husky": "catalog:",
@@ -72,12 +66,12 @@
     "lint-staged": "catalog:",
     "rimraf": "catalog:",
     "turbo": "catalog:",
-    "typescript": "catalog:",
     "unbuild": "catalog:",
-    "vite": "catalog:",
-    "vue-eslint-parser": "catalog:"
+    "vite": "catalog:"
   },
   "peerDependencies": {
+    "@eslint/js": "catalog:",
+    "@stylistic/stylelint-plugin": "catalog:",
     "@vitest/eslint-plugin": "^1.1.25",
     "eslint": "catalog:",
     "eslint-config-turbo": "catalog:",
@@ -108,7 +102,15 @@
     "stylelint-config-standard": "catalog:",
     "stylelint-order": "catalog:",
     "stylelint-prettier": "catalog:",
-    "stylelint-scss": "catalog:"
+    "stylelint-scss": "catalog:",
+    "vue-eslint-parser": "catalog:"
+  },
+  "optionalDependencies": {
+    "@types/eslint": "catalog:",
+    "@typescript-eslint/eslint-plugin": "catalog:",
+    "@typescript-eslint/parser": "catalog:",
+    "@vitest/eslint-plugin": "catalog:",
+    "typescript": "catalog:"
   },
   "packageManager": "pnpm@9.15.3",
   "engines": {
